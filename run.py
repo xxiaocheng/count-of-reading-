@@ -57,6 +57,13 @@ def to_plt(result):
     plt.show()
 
 def to_svg(result):
+    index_values=[]
+    x_values=[]
+    y_values=[]
+    for k ,v in result.items():
+        index_values.append(k)
+        x_values.append(v[0])
+        y_values.append(v[1])
     hist=pygal.Bar()
     hist.x_labels=x_values
     hist.add('count',y_values)
